@@ -1,0 +1,322 @@
+.container {
+  width: 100%;
+  height: 100%;
+  grid-template-rows: 115px, 50px, 635px;
+  width: 480px;
+  height: 800px;
+  display: grid;
+  padding: 0px;
+  outline: 1px solid black;
+}
+
+body {
+  margin: auto;
+}
+
+.titleBar {
+  padding-top: 35px;
+  height: 115px;
+  text-align: center;
+  background-color: lightgreen;
+}
+
+.cookieLocationBar {
+  width: 100%;
+  height: 100%;
+  grid-row: 2 / 1 span;
+  grid-template-columns: 260px, 220px;
+  grid-template-rows: auto;
+  width: 480px;
+  height: 50px;
+  display: grid;
+  padding: 0px;
+  /* outline: 1px solid black; */
+}
+
+.cookieColumn {
+  width: 260px;
+  grid-row: 1 / 1 span;
+  grid-column: 1 / 1 span;
+}
+
+.locationColumn {
+  width: 100%;
+  height: 100%;
+  grid-row: 1 / 1 span;
+  grid-column: 2 / 1 span;
+  grid-template-columns: 170px, 50px;
+  grid-template-rows: 50px;
+  width: 220px;
+  height: 50px;
+  display: grid;
+  padding: 0px;
+  /* outline: 1px solid black; */
+}
+
+.locationInfo {
+  height: 50px;
+  width: 165px;
+  grid-row: 1 / 1 span;
+  grid-column: 1 / 1 span;
+}
+
+#locationInput {
+  width: 168px;
+  height: 25px;
+}
+
+#locationSymbol {
+  height: 50px;
+  width: 50px;
+  margin: auto;
+  grid-row: 1 / 1 span;
+  grid-column: 2 / 1 span;
+}
+
+.pageContents {
+  width: 100%;
+  height: 100%;
+  grid-row: 3 / 1 span;
+  grid-template-columns: auto;
+  grid-template-rows: 95px, 540px;
+  width: 480px;
+  height: 635px;
+  display: grid;
+  padding: 0px;
+  /* outline: 1px solid black; */
+  
+}
+
+.searchBar {
+  height: 95px;
+  grid-row: 1 / 1 span;
+  grid-column: 1 / 1 span;
+  margin: auto;
+  padding-top: 15px;
+}
+
+input {
+  border-radius: 32px;
+  margin: auto;
+}
+
+.commonResults {
+  width: 100%;
+  height: 100%;
+  grid-row: 2 / 1 span;
+  grid-column: 1 / 1 span;
+  grid-template-columns: 240px, 240px;
+  grid-template-rows: auto;
+  height: 540px;
+  display: grid;
+  padding: 0px;
+  /* outline: 1px solid black; */
+}
+
+.commonPests {
+  width: 240px;
+  height: 540px;
+  grid-row: 1 / 1 span;
+  grid-column: 1 / 1 span;
+}
+
+.commonWeeds {
+  width: 240px;
+  height: 540px;
+  grid-row: 1 / 1 span;
+  grid-column: 2 / 1 span;
+}
+
+h1 {
+  text-align: center;
+  margin: auto;
+  font-style: sans-serif;
+  font-weight: bold;
+}
+
+#locationSymbol {
+  float: right;
+}
+
+form {
+  margin: auto;
+  position: relative;
+  width: 100%;
+}
+
+#search {
+  width: 480px;
+  height: 60px;
+  font-style: italic;
+  font-size: 23px;
+  padding: 15px
+}
+
+#searchSymbol {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  transform: translate(-140%, 10%);
+}
+
+h3 {
+  text-align: center;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.commonPestList {
+  height: 470px;
+  overflow: auto;
+}
+
+.pest {
+  position: relative;
+  padding-bottom: 25px;
+}
+
+.listIcon {
+  width: 90px;
+  height: 90px;
+}
+
+p {
+  position: absolute;
+  transform: translate(95px, -70px);
+}
+
+
+/* Plant info Page */
+
+.middlePage {
+  width: 100%;
+  height: 100%;
+  grid-row: 3 / 1 span;
+  grid-template-columns: auto;
+  grid-template-rows: 95px, 540px;
+  width: 480px;
+  height: 635px;
+  display: grid;
+  padding: 0px;
+  /* outline: 1px solid black; */
+  
+}
+
+.middlePage-Content {
+  height: 95px;
+  grid-row: 1 / 1 span;
+  grid-column: 1 / 1 span;
+  margin: auto;
+  padding-top: 15px;
+}
+
+.homeIcon {
+  width: 90px;
+  height: 90px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 40%;
+
+}
+
+.homeIcon-title {
+  display: flex;
+  align-items: center;
+  margin-bottom: 40%;
+
+}
+
+.OnionImage {
+  width: 120px;
+  height: 120px;
+  display: block;
+  margin: 0 auto;
+}
+
+.OnionTitle-image {
+  margin-right: 300px;
+  margin-left: 20px;
+
+
+}
+
+.OnionTitle-image h3 {
+  margin: 0;
+
+}
+
+
+.info {
+margin-top: 20%; 
+}
+
+
+
+.info-box {
+  width: 420px;
+  border: 2px solid #ccc;
+  padding: 10px;
+  margin: 20px;
+  margin-left: 0px;
+  height: 400px;
+
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-right: 33%;
+  margin-left: 15px;
+  
+  
+}
+
+.buttons button {
+  width: 130px;
+  border-radius: 20px;
+  margin-top: 5%;
+  cursor: pointer;
+
+}
+
+#pests-button {
+  background-color: #4CAF50;
+  color:#fff;
+}
+
+#weeds-button {
+  background-color: #fff;
+  color:#000;
+}
+/*<button id="weeds-button">Weeds</button> */
+
+#info-content {
+  display: none;
+}
+
+#info-content img {
+  max-width: 100%;
+}
+
+.commonResults {
+  width: 100%;
+  height: 100%;
+  grid-row: 2 / 1 span;
+  grid-column: 1 / 1 span;
+  grid-template-columns: 240px, 240px;
+  grid-template-rows: auto;
+  height: 540px;
+  display: grid;
+  padding: 0px;
+  /* outline: 1px solid black; */
+  margin-left: 50px;
+  margin-top: 160px;
+}
+
+.commonPests {
+  width: 240px;
+  height: 540px;
+  grid-row: 1 / 1 span;
+  grid-column: 1 / 1 span;
+}

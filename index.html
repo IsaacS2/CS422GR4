@@ -1,0 +1,212 @@
+<!--
+Pest Guard
+Your Name: Isaac Sanchez, Thomas Say, Dawson Dinh, Danyal Warraich
+Collaborators: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_custom_scrollbar
+               https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_button_on_image
+               https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_menu_hor_scroll
+               https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_autocomplete
+               https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map
+
+-->
+
+<head>
+    <meta charset="utf-8">
+    <title>Group5GR4</title>
+    <!-- Load style sheets -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.css">
+
+    <link rel="stylesheet" href="searchLayout.css">
+
+    <!-- Use mobile-aware viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Load any supplemental Javascript libraries here -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+    <script>
+        const searchMap = new Map();
+        searchMap.set("Cicadas", "Pest");
+        searchMap.set("Rabbits", "Pest");
+        searchMap.set("Radish", "Plant");
+        searchMap.set("Japanese Beetles", "Pest");
+        searchMap.set("Slugs", "Pest");
+        searchMap.set("Crabgrass", "Weed");
+        searchMap.set("Dandelions", "Weed");
+        searchMap.set("Neem Oil", "Solution");
+        searchMap.set("Onions", "Plant");
+        searchMap.set("Prostrate Knotweeds", "Weed");
+        searchMap.set("Common Ragweeds", "Weed");
+
+        const iconMap = new Map();
+        iconMap.set("Pest", "images/pest.png");
+        iconMap.set("Weed", "images/weed.png");
+        iconMap.set("Plant", "images/plant.png");
+        iconMap.set("Solution", "images/solution.png");
+
+        function checkResultsList() {
+            let searchList = document.getElementsByClassName("searchResults")
+            if (searchList[0] != undefined) {
+                searchList[0].remove();
+            }
+            let inputText = document.getElementById("search").value;
+            let autoList = document.createElement("div");
+            let iterator = searchMap.keys();
+            if (document.getElementById("search") == document.activeElement) {
+                autoList.classList.add("searchResults");
+                searchMap.forEach((key) => {
+                    let actualKey = iterator.next().value;
+                    if (actualKey.substr(0, inputText.length).toUpperCase() == inputText.toUpperCase()
+                        && inputText.length > 0) {
+                        let entry = new SearchEntry(
+                            actualKey,
+                            iconMap.get(key),
+                        );
+                        autoList.innerHTML = autoList.innerHTML + entry.entry;
+                    }
+                    if (inputText.length > 0) {
+                        document.getElementById("search").style.fontStyle = "normal";
+                    }
+                    else {
+                        document.getElementById("search").style.fontStyle = "italic";
+                    }
+                });
+            }
+            document.getElementById("searchBar").append(autoList);
+        }
+
+        $(document).on('keyup', function (evt) {
+            checkResultsList();
+        });
+
+        $(document).on('click', ".searchItem", function (evt) {
+            /* Take the user to the associated page of the icon */
+            switch (searchMap.get(this.children[0].innerHTML)) {
+                case "Pest":
+                    window.location.href = "pest_results.html";
+                    console.log("on to the pest page");
+                    break;
+                case "Weed":
+                    window.location.href = "pest_results.html";
+                    console.log("on to the weed page");
+                    break;
+                case "Plant":
+                    window.location.href = "plant-info-index.html";
+                    console.log("on to the plant page");
+                    break;
+                case "Solution":
+                    window.location.href = "solution_results.html";
+                    console.log("on to the solution page");
+            }
+        });
+
+        $(document).on('click', "#searchSymbol", function (evt) {
+            let firstSearchResult = document.getElementsByClassName("searchResults")[0];
+            if (firstSearchResult != undefined) {
+                switch (searchMap.get(firstSearchResult.children[0].children[0].innerHTML)) {
+                    case "Pest":
+                        window.location.href = "pest_results.html";
+                        console.log("on to the pest page");
+                        break;
+                    case "Weed":
+                        window.location.href = "pest_results.html";
+                        console.log("on to the weed page");
+                        break;
+                    case "Plant":
+                        window.location.href = "plant-info-index.html";
+                        console.log("on to the plant page");
+                        break;
+                    case "Solution":
+                        window.location.href = "solution_results.html";
+                        console.log("on to the solution page");
+                }
+            }
+        });
+
+
+        $(document).on('click', function (evt) {
+            checkResultsList();
+        });
+
+    </script>
+
+    <script src="search.js"></script>
+    <script src="searchEntry.js"></script>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="titleBar">
+            <h1>Pest Guard</h1>
+        </div>
+        <div class="cookieLocationBar">
+            <div class="cookieColumn">
+
+            </div>
+            <div class="locationColumn">
+                <label class="locationInfo">Location: <input type="text" id="locationInput"
+                        placeholder="Chicago, IL, 60609"></label>
+                <img src="images/locationSymbol.jpg" id="locationSymbol">
+            </div>
+        </div>
+        <div class="pageContents">
+            <div class="searchBar" id="searchBar">
+                <form autocomplete="off">
+                    <input type="text" id="search" placeholder="Enter plant, weed, pest, or solution...">
+                    <img src="images/searchMagnifier.jpg" id="searchSymbol">
+                </form>
+            </div>
+            <div class="commonResults">
+                <div class="commonPests">
+                    <h3>
+                        Common Pests Near You:
+                    </h3>
+                    <div class="commonPestList">
+                        <div class="pest">
+                            <img src="images/cicada.jpg" class="listIcon listPest">
+                            <p class="commonPestTitle">Cicadas</p>
+                        </div>
+                        <div class="pest">
+                            <img src="images/rabbit.jpg" class="listIcon listPest">
+                            <p class="commonPestTitle">Rabbits</p>
+                        </div>
+                        <div class="pest">
+                            <img src="images/japaneseBeetle.jpg" class="listIcon listPest">
+                            <p class="commonPestTitle">Japanese Beetles</p>
+                        </div>
+                        <div class="pest">
+                            <img src="images/slug.jpg" class="listIcon listPest">
+                            <p class="commonPestTitle">Slugs</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="commonWeeds">
+                    <h3>
+                        Common Weeds Near You:
+                    </h3>
+                    <div class="commonPestList">
+                        <div class="pest">
+                            <img src="images/crabGrass.jpg" class="listIcon listWeed">
+                            <p class="commonPestTitle">Crabgrass</p>
+                        </div>
+                        <div class="pest">
+                            <img src="images/dandelions.jpg" class="listIcon listWeed">
+                            <p class="commonPestTitle">Dandelion</p>
+                        </div>
+                        <div class="pest">
+                            <img src="images/prostrateKnotweed.jpg" class="listIcon listWeed">
+                            <p class="commonPestTitle">Prostrate Knotweed</p>
+                        </div>
+                        <div class="pest">
+                            <img src="images/ragWeed.jpg" class="listIcon listWeed">
+                            <p class="commonPestTitle">Common ragweed</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

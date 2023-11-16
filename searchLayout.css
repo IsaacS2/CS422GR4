@@ -1,0 +1,217 @@
+.container {
+    width: 100%;
+    height: 100%;
+    grid-template-rows: 115px, 50px, 635px;
+    width: 480px;
+    height: 800px;
+    display: grid;
+    padding: 0px;
+    outline: 1px solid black;
+}
+
+body {
+    margin: auto;
+}
+
+.titleBar {
+    padding-top: 35px;
+    height: 115px;
+    text-align: center;
+    background-color: lightgreen;
+}
+
+.cookieLocationBar {
+    width: 100%;
+    height: 100%;
+    grid-row: 2 / 1 span;
+    grid-template-columns: 260px, 220px;
+    grid-template-rows: auto;
+    width: 480px;
+    height: 50px;
+    display: grid;
+    padding: 0px;
+}
+
+.cookieColumn {
+    width: 260px;
+    grid-row: 1 / 1 span;
+    grid-column: 1 / 1 span;
+}
+
+.locationColumn {
+    width: 100%;
+    height: 100%;
+    grid-row: 1 / 1 span;
+    grid-column: 2 / 1 span;
+    grid-template-columns: 170px, 50px;
+    grid-template-rows: 50px;
+    width: 220px;
+    height: 50px;
+    display: grid;
+    padding: 0px;
+}
+
+.locationInfo {
+    height: 50px;
+    width: 165px;
+    grid-row: 1 / 1 span;
+    grid-column: 1 / 1 span;
+}
+
+#locationInput {
+    width: 168px;
+    height: 25px;
+}
+
+#locationSymbol {
+    height: 50px;
+    width: 50px;
+    margin: auto;
+    grid-row: 1 / 1 span;
+    grid-column: 2 / 1 span;
+}
+
+.pageContents {
+    width: 100%;
+    height: 100%;
+    grid-row: 3 / 1 span;
+    grid-template-columns: auto;
+    grid-template-rows: 95px, 540px;
+    width: 480px;
+    height: 635px;
+    display: grid;
+    padding: 0px;
+}
+
+.searchBar {
+    height: 95px;
+    grid-row: 1 / 1 span;
+    grid-column: 1 / 1 span;
+    margin: auto;
+    padding-top: 15px;
+    position: relative;
+}
+
+.searchResults {
+    z-index: 1;
+}
+
+.searchItem {
+    height: 75px;
+    width: 480px;
+    position: relative;
+    z-index: 1;
+    background-color: lightgrey;
+}
+
+.searchItemIcon {
+    position: absolute;
+    height: 75px;
+    width: 75px;
+    transform: translate(400px, 0px);
+}
+
+.searchItem:hover {
+    background-color: grey;
+}
+
+.pest:hover {
+    background-color: grey;
+}
+
+.searchText {
+    position: absolute;
+    font-size: 25px;
+    transform: translate(20px, 15px);
+}
+
+input {
+    border-radius: 32px;
+    margin: auto;
+}
+
+.commonResults {
+    width: 100%;
+    height: 100%;
+    grid-row: 2 / 1 span;
+    grid-column: 1 / 1 span;
+    grid-template-columns: 240px, 240px;
+    grid-template-rows: auto;
+    height: 540px;
+    display: grid;
+    padding: 0px;
+}
+
+.commonPests {
+    width: 240px;
+    height: 540px;
+    grid-row: 1 / 1 span;
+    grid-column: 1 / 1 span;
+}
+
+.commonWeeds {
+    width: 240px;
+    height: 540px;
+    grid-row: 1 / 1 span;
+    grid-column: 2 / 1 span;
+}
+
+h1 {
+    text-align: center;
+    margin: auto;
+    font-style: sans-serif;
+    font-weight: bold;
+}
+
+#locationSymbol {
+    float: right;
+}
+
+form {
+    margin: auto;
+    position: relative;
+    width: 100%;
+}
+
+#search {
+    width: 480px;
+    height: 60px;
+    font-style: italic;
+    font-size: 23px;
+    padding: 15px
+}
+
+#searchSymbol {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    transform: translate(-140%, 10%);
+}
+
+h3 {
+    text-align: center;
+    padding-left: 10px;
+    padding-right: 20px;
+}
+
+.commonPestList {
+    height: 470px;
+    overflow: auto;
+}
+
+.pest {
+    position: relative;
+    padding-bottom: 25px;
+}
+
+.listIcon {
+    width: 90px;
+    height: 90px;
+}
+
+.commonPestTitle {
+    position: absolute;
+    transform: translate(93px, -65px);
+    font-size: 15px;
+    font-weight: bold;
+}
