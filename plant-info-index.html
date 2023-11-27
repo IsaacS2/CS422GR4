@@ -27,6 +27,11 @@
 
 </script>
 
+<script>
+  function redirectToPage(page) {
+      window.location.href = page;
+  }
+</script>
 
 
 </head>
@@ -60,7 +65,7 @@
           <div class="locationColumn">
               <label class="locationInfo">Location: <input type="text" id="locationInput"
                       placeholder="Chicago, IL, 60609"></label>
-              <img src="plant-info-images/map_icon.jpg" id="locationSymbol">
+              <img src="images/locationSymbol.jpg" id="locationSymbol">
               
           </div>
 
@@ -79,14 +84,18 @@
               
                 <img src="plant-info-images/onion-icon.jpg" class="OnionImage">
             
+                
         </div>
+        
     
         <div class="plant-description">
           <ul>Leaves vulnerable to aphids</ul>
           <ul>Roots vulnerable to onion thrips & onion root maggots</ul>
-          
+          <ul>Check pests or weeds below that directly harm onions</ul>
+
         </div>
       </div>
+      
             <div class="buttons">
               <button id="pests-button">Pests</button>
               <button id="weeds-button">Weeds</button>
@@ -96,24 +105,18 @@
             <div class="info-box">
              
             
-                <div class="pest">
-                  <a href="pest_results.html">
-                    <img src="plant-info-images/aphid.jpg" class="listIcon">
-                    <p>Aphids</p>
-                </a>
-              </div>
-              <div class="pest">
-                <a href="pest_results.html">
-                  <img src="plant-info-images/stem-bulb.jpg" class="listIcon">
-                  <p>Stem and bulb nem</p>
-              </a>
-              </div>
-              <div class="pest">
-                <a href="pest_results.html">
-                  <img src="plant-info-images/onion-fly.jpg" class="listIcon">
-                  <p>Onion fly</p>
-              </a>
-              </div>        
+              <div class="pest" onclick="redirectToPage('pest_results.html')">
+                <img src="plant-info-images/aphid.jpg" class="listIcon">
+                <p>Aphids</p>
+            </div>
+            <div class="pest" onclick="redirectToPage('pest_results.html')">
+                <img src="plant-info-images/stem-bulb.jpg" class="listIcon">
+                <p>Stem and bulb nem</p>
+            </div>
+            <div class="pest" onclick="redirectToPage('pest_results.html')">
+                <img src="plant-info-images/onion-fly.jpg" class="listIcon">
+                <p>Onion fly</p>
+            </div>       
           
               <div class="content" id="info-content">
                 <!-- Pest and Weed content will be displayed here-->
