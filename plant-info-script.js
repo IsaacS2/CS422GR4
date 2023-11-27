@@ -44,7 +44,7 @@ const weedsData = [
 ];
 
 pestsButton.addEventListener('click', function() {
-    showPests(pestsData);
+    showContent(pestsData);
 
     pestsButton.style.backgroundColor = '#4CAF50';
     pestsButton.style.color = '#fff';
@@ -55,7 +55,7 @@ pestsButton.addEventListener('click', function() {
 });
 
 weedsButton.addEventListener('click', function() {
-    showWeeds(weedsData);
+    showContent(weedsData);
 
     weedsButton.style.backgroundColor = '#4CAF50';
     weedsButton.style.color = '#fff';
@@ -66,55 +66,34 @@ weedsButton.addEventListener('click', function() {
 
 });
 
-function showPests(pests) {
+function showContent(data) {
     commonPestList.innerHTML = ''; // Clear the existing content
 
-    pests.forEach(pest => {
-        const pestItem = document.createElement('div');
-        pestItem.className = 'pest';
+    data.forEach(item => {
+        const container = document.createElement('div');
+        container.className = 'pest';
+        container.addEventListener('click', function() {
+            redirectToPage(item.destination);
+        });
 
-        const pestLink = document.createElement('a');  // anchor element
-        pestLink.href = pest.destination;
+        const image = document.createElement('img');
+        image.src = item.image;
+        image.className = 'listIcon';
 
-        const pestImage = document.createElement('img');
-        pestImage.src = pest.image;
-        pestImage.className = 'listIcon';
+        const name = document.createElement('p');
+        name.textContent = item.name;
 
-        const pestName = document.createElement('p');
-        pestName.textContent = pest.name;
-
-        pestLink.appendChild(pestImage);
-        pestLink.appendChild(pestName);
-
-        pestItem.appendChild(pestLink);
-        commonPestList.appendChild(pestItem);
+        container.appendChild(image);
+        container.appendChild(name);
+        commonPestList.appendChild(container);
     });
 }
 
-function showWeeds(pests) {
-    commonPestList.innerHTML = ''; // Clear the existing content
-
-    pests.forEach(pest => {
-        const pestItem = document.createElement('div');
-        pestItem.className = 'pest';
-
-        const pestLink = document.createElement('a');  // anchor element
-        pestLink.href = pest.destination; // destination page url
-
-        const pestImage = document.createElement('img');
-        pestImage.src = pest.image;
-        pestImage.className = 'listIcon';
-
-        const pestName = document.createElement('p');
-        pestName.textContent = pest.name;
-
-        pestLink.appendChild(pestImage);
-        pestLink.appendChild(pestName);
-        
-        pestItem.appendChild(pestLink);
-        commonPestList.appendChild(pestItem);
-    });
+function redirectToPage(page) {
+    window.location.href = page;
 }
+
+
 
 
 });
