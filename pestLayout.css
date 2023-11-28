@@ -1,0 +1,75 @@
+.titleBar {
+    padding-top: 0px;
+}
+.titleBar h1 {
+    position: relative;
+    padding-top: 35px;
+}
+
+.pageContents {
+    padding: 10px;
+}
+
+h1 {
+    margin-left: 10px;
+}
+
+.solutionContents{
+    display: block grid;
+    min-height: 120px;
+}
+.solutionTitle{
+    text-align: center;
+    font-weight: bold;
+}
+.solutionImage{
+    position: absolute;
+    margin-left: 35px;
+    display: inline;
+}
+.solutionImage img {
+    border: solid 5px black;
+}
+.solutionDescription{
+    position: absolute;
+    margin-left: 218px;
+    margin-right: 5px;
+}
+.solutionDescription p {
+    position: static;
+    transform: translate(0px, 0px);
+}
+.solutionDescription br {
+    line-height: 2px;
+}
+.nextResults{
+    display: block grid;
+    position: static;
+}
+.resultsBox {
+    grid-column: 1;
+    display: block;
+    width: 290px;
+    position: static;
+    border: solid 1px green;
+    max-height: 375px;
+}
+.result{
+    display: block grid;
+    padding: 5px;
+}
+.resultName{
+    position: absolute;
+    margin-left: 100px;
+    margin-top: 5%;
+    /* transform: transformY(-50%); */
+}
+.optionsBox{
+    grid-column: 2;
+    display: block;
+    position: static;
+}
+.option{
+    display: block;
+    position: static;
+}

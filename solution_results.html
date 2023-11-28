@@ -5,20 +5,24 @@ Collaborators: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_cus
                https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_button_on_image
                https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_menu_hor_scroll
 -->
-
+<!DOCTYPE html>
 <head>
     <meta charset="utf-8">
     <title>Group5GR4</title>
     <!-- Load style sheets -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.css">
 
-    <link rel="stylesheet" href="layout.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="solutionLayout.css">
+    <link rel="stylesheet" href="mapLayout.css">
 
     <!-- Use mobile-aware viewport -->
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Load any supplemental Javascript libraries here -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="http://maps.google.com/maps/api/js?libraries=geometry&sensor=true_or_false"></script>
+    <script src="data.js"></script>
 
     <script src="autoGenerate.js"></script>
     <script src="breadcrumbs.js"></script>
@@ -50,8 +54,9 @@ Collaborators: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_cus
             </div>
         </div>
         <div class="pageContents">
-            <div class="solutionContents">
-                <div class="solutionImage">
+            <div id="solutionContents" class="solutionContents">
+                <script src="solutionResults.js"></script>
+                <!--div class="solutionImage">
                     <div class="solutionTitle">
                         Neem Oil
                     </div>
@@ -61,15 +66,28 @@ Collaborators: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_cus
                     <p>Naturally occurring pesticide found in seeds.</p><br>
                     <p>Repels many insects such as ants, beetles, and caterpillars.</p><br>
                     <p>To use: Dilute in water and spray.</p>
-                </div>
+                </div-->
             </div>
             <div class="mapContents">
-                <div class="map">
+                <div id="map" class="map">
                     <p>Availability:</p><br>
-                    <img src="images/map.png" width="295">
+                    <script>
+                        var map;
+                        function initMap() {
+                          map = new google.maps.Map(document.getElementById('map'), {
+                            center: {lat: 41.867, lng: -87.647},
+                            zoom: 13
+                          });
+                          solutionResults();
+                          updateResults();
+                        }
+                      </script>
+                      <script src="https://maps.googleapis.com/maps/api/js?libraries=geometry&key=AIzaSyCP9AE400ErDVd_XZNrYQpk4yqsIpcptq0&callback=initMap"
+                      async defer></script>
                 </div>
-                <div class="mapResults">
-                    <div class="store">
+                <div id="mapResults" class="mapResults">
+                    <script src="mapResults.js"></script>
+                    <!--div class="store">
                         <div class="mapPin"><img src="images/mapPin.png"></div>
                         <div class="storeTitle">Lowe's Home Improvement</div>
                         <div class="storeDistance">0.6 mi</div>
@@ -92,7 +110,7 @@ Collaborators: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_cus
                         <div class="storeTitle">Costco Wholesale</div>
                         <div class="storeDistance">3.2 mi</div>
                         <div class="storePrice">$9.99</div>
-                    </div>
+                    </div-->
                 </div>
             </div>
         </div>

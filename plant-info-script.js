@@ -1,24 +1,24 @@
 document.addEventListener('DOMContentLoaded', function () {
     const pestsButton = document.getElementById('pests-button');
     const weedsButton = document.getElementById('weeds-button');
-    const commonPestList = document.querySelector('.info-box');
+    const commonPestList = document.querySelector('.commonPestList');
 
 
     const pestsData = [
         {
             name: "Aphids",
             image: "plant-info-images/aphid.jpg",
-            destination: "pest_results.html", // Destination page for Aphids
+            destination: "aphids-page.html", // Destination page for Aphids
         },
         {
             name: "Stem and Bulb Nema",
             image: "plant-info-images/stem-bulb.jpg",
-            destination: "pest_results.html", // Destination page for Stem and Bulb Nematode
+            destination: "aphids-page.html", // Destination page for Stem and Bulb Nematode
         },
         {
             name: "Onion Flies",
             image: "plant-info-images/onion-fly.jpg",
-            destination: "pest_results.html", // Destination page for Onion Fly
+            destination: "aphids-page.html", // Destination page for Onion Fly
         },
     ];
 

@@ -1,0 +1,47 @@
+
+
+.mapContents {
+    position: static;
+}
+
+.map{
+    position: absolute;
+    width: 295px;
+    /* margin-left: 10px; */
+}
+.map p {
+    margin-left: 16px;
+    font-style:italic;
+    transform: translate(0px, 0px);
+}
+.mapResults {
+    /* width: 90px; */
+    position: static;
+    margin-left: 317px;
+}
+.store {
+    /* width: 90px; */
+    display: block grid;
+    margin-top: 10px;
+}
+.mapPin {
+    width: 33px;
+    margin-top: 10px;
+    position: absolute;
+}
+.storeTitle {
+    /* position: absolute; */
+    width: 115px;
+    margin-left: 20px;
+    font-size: 12px;
+}
+.storeDistance {
+    width: 115px;
+    margin-left: 20px;
+    font-size: 12px;
+}
+.storePrice {
+    width: 115px;
+    margin-left: 20px;
+    font-size: 12px;
+}

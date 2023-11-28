@@ -1,0 +1,149 @@
+.locationColumn {
+    /* width: 100%;
+    height: 100%; */
+    grid-row: 1 / 1 span;
+    grid-column: 2 / 1 span;
+    grid-template-columns: 170px, 50px;
+    grid-template-rows: 50px;
+    width: 220px;
+    height: 50px;
+    display: grid;
+    padding: 0px;
+    /* outline: 1px solid black; */
+}
+
+.locationInfo {
+    height: 50px;
+    width: 165px;
+    grid-row: 1 / 1 span;
+    grid-column: 1 / 1 span;
+}
+
+  
+
+.container {
+    width: 100%;
+    height: 100%;
+    grid-template-rows: 115px, 50px, 635px;
+    width: 480px;
+    height: 800px;
+    display: grid;
+    padding: 0px;
+    outline: 1px solid black;
+}
+
+body {
+  margin: auto;
+}
+
+.titleBar {
+  padding-top: 35px;
+  height: 115px;
+  text-align: center;
+  background-color: lightgreen;
+}
+
+.homeIcon {
+    position:absolute;
+    display: block;
+    height: auto;
+}
+
+.cookieLocationBar {
+  /* width: 100%;
+  height: 100%; */
+  grid-row: 2 / 1 span;
+  grid-template-columns: 260px, 220px;
+  grid-template-rows: auto;
+  width: 480px;
+  height: 50px;
+  display: grid;
+  padding: 0px;
+  /* outline: 1px solid black; */
+}
+
+.cookieColumn {
+  width: 260px;
+  grid-row: 1 / 1 span;
+  grid-column: 1 / 1 span;
+}
+
+input {
+    border-radius: 32px;
+    margin: auto;
+}
+
+#locationInput {
+  width: 168px;
+  height: 25px;
+}
+
+#locationSymbol {
+  height: 50px;
+  width: 50px;
+  margin: auto;
+  grid-row: 1 / 1 span;
+  grid-column: 2 / 1 span;
+  float: right;
+}
+
+.searchBar {
+    height: 95px;
+    grid-row: 1 / 1 span;
+    grid-column: 1 / 1 span;
+    margin: auto;
+    padding-top: 15px;
+}
+
+form {
+  margin: auto;
+  position: relative;
+  width: 100%;
+}
+
+h1 {
+  text-align: center;
+  margin: auto;
+  font-style: sans-serif;
+  font-weight: bold;
+}
+
+h3 {
+    text-align: center;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+p {
+  position: absolute;
+  transform: translate(95px, -70px);
+}
+
+.commonPestList {
+    height: 470px;
+    overflow: auto;
+}
+
+.pest {
+    position: relative;
+    padding-bottom: 25px;
+}
+
+.listIcon {
+    width: 90px;
+    height: 90px;
+}
+
+.pageContents {
+  width: 100%;
+  height: 100%;
+  grid-row: 3 / 1 span;
+  grid-template-columns: auto;
+  grid-template-rows: 95px, 540px;
+  width: 480px;
+  height: 635px;
+  display: grid;
+  padding: 0px;
+  /* outline: 1px solid black; */
+  
+}
