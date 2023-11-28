@@ -1,7 +1,12 @@
 body {
     width: 480px;
     height: 800px;
+    display: grid;
+    padding: 0px;
+    transform-origin: center top;
+    margin: auto;
 }
+
 .searchBar {
     position: relative;
 }
@@ -73,11 +78,11 @@ h3 {
 
 /* Main Page location styling */
 .locationDropdown {
-    display: none;    
+    display: none;
     background-color: #f9f9f9;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     z-index: 1;
-    
+
 }
 
 .locationDropdown a {
@@ -95,9 +100,8 @@ h3 {
 #locationSymbol {
     cursor: pointer;
     transition: transform 0.3s ease-in-out
-     
 }
 
 #locationSymbol:hover {
-    transform: scale(0.9); 
+    transform: scale(0.9);
 }
