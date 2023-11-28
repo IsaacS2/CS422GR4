@@ -29,7 +29,8 @@
     var pageInfo = pageMap.get(sessionStorage.getItem("currentPageInfo"));
 
     $(document).on('mousedown', ".pest", function (evt) {
-      var pestName = this.children[1].innerHTML;
+      console.log(this);
+      var pestName = this.children[0].children[1].innerHTML;
       console.log(pestName);
       matchTextWithData(pestName);
     });
