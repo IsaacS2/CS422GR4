@@ -84,7 +84,6 @@ body {
   display: grid;
   padding: 0px;
   /* outline: 1px solid black; */
-  
 }
 
 .searchBar {
@@ -186,18 +185,17 @@ p {
 
 .middlePage {
   padding: 10px;
-  
 }
 
 .middlePage-Content {
   display: block grid;
-    min-height: 120px;
+  min-height: 120px;
 }
 
 .info-onion {
   position: absolute;
-    margin-left: 35px;
-    display: inline;
+  margin-left: 35px;
+  display: inline;
 }
 
 .OnionTitle-image {
@@ -209,7 +207,7 @@ p {
   border: solid 5px black;
 }
 
-.plant-description{
+.plant-description {
   position: absolute;
   margin-left: 218px;
   margin-right: 5px;
@@ -220,6 +218,7 @@ p {
   position: static;
   transform: translate(0px, 0px);
 }
+
 .plant-description br {
   line-height: 2px;
 }
@@ -245,7 +244,6 @@ p {
 
 .OnionImage {
   width: 150px;
-  
 }
 
 .OnionTitle-image h3 {
@@ -255,7 +253,7 @@ p {
 
 
 .info {
-margin-top: 20%; 
+  margin-top: 20%;
 }
 
 .pest:hover {
@@ -280,7 +278,7 @@ margin-top: 20%;
   margin-right: 27%;
   margin-left: 15px;
   margin-top: 15%;
-  
+
 }
 
 .buttons button {
@@ -293,13 +291,14 @@ margin-top: 20%;
 
 #pests-button {
   background-color: #4CAF50;
-  color:#fff;
+  color: #fff;
 }
 
 #weeds-button {
   background-color: #fff;
-  color:#000;
+  color: #000;
 }
+
 /*<button id="weeds-button">Weeds</button> */
 
 #info-content {

@@ -4,6 +4,7 @@ Your Name: Isaac Sanchez, Thomas Say, Dawson Dinh, Danyal Warraich
 Collaborators: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_custom_scrollbar
                https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_button_on_image
                https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_menu_hor_scroll
+               https://stackoverflow.com/questions/7882356/javascript-get-img-src-and-set-as-variable
 -->
 
 <head>
@@ -19,6 +20,12 @@ Collaborators: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_cus
 
     <!-- Load any supplemental Javascript libraries here -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+    <script src="autoGenerate.js"></script>
+    <script src="breadcrumbs.js"></script>
+    <script>
+        var pageInfo = pageMap.get(sessionStorage.getItem("currentPageInfo"));
+    </script>
 </head>
 
 <body>
@@ -27,7 +34,7 @@ Collaborators: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_cus
         <div class="titleBar">
             <div class="homeIcon">
                 <a href="index.html">
-                <img src="images/home.png" height="115">
+                    <img src="images/home.png" height="115">
                 </a>
             </div>
             <h1>Pest Info</h1>
@@ -71,27 +78,27 @@ Collaborators: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_cus
                         <div class="resultName">Castile Soap</div>
                     </div>
                     <a href="solution_results.html">
-                    <div class="result">
-                        <div class="resultPicture">
-                            <img src="images/neemOil.jpg" width="85">
+                        <div class="result">
+                            <div class="resultPicture">
+                                <img src="images/neemOil.jpg" width="85">
+                            </div>
+                            <div class="resultName">Neem Oil</div>
                         </div>
-                        <div class="resultName">Neem Oil</div>
-                    </div>
-                </a>
+                    </a>
                 </div>
                 <div class="optionsBox">
                     <h4>Filter:</h4>
                     <div class="option">
-                    <input type="checkbox" id="naturalSolution" value="All-natural">
-                    <label for="naturalSolution">All-natural</label><br>
+                        <input type="checkbox" id="naturalSolution" value="All-natural">
+                        <label for="naturalSolution">All-natural</label><br>
                     </div>
                     <div class="option">
-                    <input type="checkbox" id="petSolution" value="Pet-friendly">
-                    <label for="petSolution">Pet-friendly</label><br>
+                        <input type="checkbox" id="petSolution" value="Pet-friendly">
+                        <label for="petSolution">Pet-friendly</label><br>
                     </div>
                     <div class="option">
-                    <input type="checkbox" id="ecoSolution" value="Eco-friendly">
-                    <label for="ecoSolution">Eco-friendly</label><br>
+                        <input type="checkbox" id="ecoSolution" value="Eco-friendly">
+                        <label for="ecoSolution">Eco-friendly</label><br>
                     </div>
                 </div>
             </div>
@@ -99,5 +106,13 @@ Collaborators: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_cus
     </div>
 
 </body>
+
+<script>
+    document.getElementsByClassName("solutionTitle")[0].innerHTML = pageInfo.name;
+    document.getElementsByClassName("solutionImage")[0].lastElementChild.src = pageInfo.image;
+    document.getElementsByClassName("solutionDescription")[0].children[0].innerHTML = pageInfo.description1;
+    document.getElementsByClassName("solutionDescription")[0].children[2].innerHTML = pageInfo.description2;
+    document.getElementsByClassName("solutionDescription")[0].children[4].innerHTML = pageInfo.description3;
+</script>
 
 </html>

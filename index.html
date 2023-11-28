@@ -6,7 +6,9 @@ Collaborators: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_cus
                https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_menu_hor_scroll
                https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_autocomplete
                https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map
-
+               https://stackoverflow.com/questions/2932782/global-variables-in-javascript-across-multiple-files
+               https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_onmousedown
+               https://www.w3schools.com/cssref/playdemo.php?filename=playcss_transform-origin
 -->
 
 <head>
@@ -24,27 +26,9 @@ Collaborators: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_cus
 
     <!-- Load any supplemental Javascript libraries here -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="autoGenerate.js"></script>
 
     <script>
-        const searchMap = new Map();
-        searchMap.set("Cicadas", "Pest");
-        searchMap.set("Rabbits", "Pest");
-        searchMap.set("Radish", "Plant");
-        searchMap.set("Japanese Beetles", "Pest");
-        searchMap.set("Slugs", "Pest");
-        searchMap.set("Crabgrass", "Weed");
-        searchMap.set("Dandelions", "Weed");
-        searchMap.set("Neem Oil", "Solution");
-        searchMap.set("Onions", "Plant");
-        searchMap.set("Prostrate Knotweeds", "Weed");
-        searchMap.set("Common Ragweeds", "Weed");
-
-        const iconMap = new Map();
-        iconMap.set("Pest", "images/pest.png");
-        iconMap.set("Weed", "images/weed.png");
-        iconMap.set("Plant", "images/plant.png");
-        iconMap.set("Solution", "images/solution.png");
-
         function checkResultsList() {
             let searchList = document.getElementsByClassName("searchResults")
             if (searchList[0] != undefined) {
@@ -61,7 +45,7 @@ Collaborators: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_cus
                         && inputText.length > 0) {
                         let entry = new SearchEntry(
                             actualKey,
-                            iconMap.get(key),
+                            iconMap.get(key[1]),
                         );
                         autoList.innerHTML = autoList.innerHTML + entry.entry;
                     }
@@ -82,7 +66,9 @@ Collaborators: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_cus
 
         $(document).on('click', ".searchItem", function (evt) {
             /* Take the user to the associated page of the icon */
-            switch (searchMap.get(this.children[0].innerHTML)) {
+            console.log(searchMap.get(this.children[0].innerHTML)[0]);
+            sessionStorage.setItem("currentPageInfo", searchMap.get(this.children[0].innerHTML)[0])
+            switch (searchMap.get(this.children[0].innerHTML)[1]) {
                 case "Pest":
                     window.location.href = "pest_results.html";
                     console.log("on to the pest page");
@@ -103,8 +89,11 @@ Collaborators: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_cus
 
         $(document).on('click', "#searchSymbol", function (evt) {
             let firstSearchResult = document.getElementsByClassName("searchResults")[0];
+            console.log(firstSearchResult);
+            let resultObject = searchMap.get(firstSearchResult.children[0].children[0].innerHTML);
+            sessionStorage.setItem("currentPageInfo", resultObject[0]);
             if (firstSearchResult != undefined) {
-                switch (searchMap.get(firstSearchResult.children[0].children[0].innerHTML)) {
+                switch (resultObject[1]) {
                     case "Pest":
                         window.location.href = "pest_results.html";
                         console.log("on to the pest page");
@@ -129,13 +118,15 @@ Collaborators: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_cus
             checkResultsList();
         });
 
+
+
     </script>
 
     <script src="search.js"></script>
     <script src="searchEntry.js"></script>
-   
+
     <script src="mainPage-location.js"></script>
-   
+
 
 </head>
 
@@ -152,8 +143,8 @@ Collaborators: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_cus
             <div class="locationColumn">
                 <label class="locationInfo">Location: <input type="text" id="locationInput"
                         placeholder="Chicago, IL, 60609" oninput="showDropdown()"></label>
-                        <img src="images/locationSymbol.jpg" id="locationSymbol" onclick="setDefaultLocation()">
-                        
+                <img src="images/locationSymbol.jpg" id="locationSymbol" onclick="setDefaultLocation()">
+
                 <div id="locationDropdown" class="locationDropdown"></div>
             </div>
         </div>
@@ -165,10 +156,10 @@ Collaborators: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_cus
                 </form>
             </div>
             <div class="commonResults" id="commonResults">
-                
+
                 <div class="commonPests">
                     <h3>
-                        Common Pests Near You:
+                        Most Common Pests Near You:
                     </h3>
                     <div class="commonPestList" id="commonPestList">
                         <div class="pest">
@@ -189,14 +180,14 @@ Collaborators: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_cus
                         </div>
                     </div>
                 </div>
-                
-                
+
+
                 <div class="commonWeeds">
                     <h3>
-                        Common Weeds Near You:
+                        Most Common Weeds Near You:
                     </h3>
-                    
-                    
+
+
                     <div class="commonPestList" id="commonWeedList">
                         <div class="pest">
                             <img src="images/crabGrass.jpg" class="listIcon listWeed">
@@ -215,17 +206,28 @@ Collaborators: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_cus
                             <p class="commonPestTitle">Common ragweed</p>
                         </div>
                     </div>
-
-
                 </div>
-                
-
-
             </div>
         </div>
     </div>
 
 </body>
 
-</html>
+<script>
+    console.log(window.innerWidth);
+    //console.log(scale(window.innerWidth / 480, window.innerWidth / 480));
+    let xScaler = window.innerWidth / 480;
+    let yScaler = window.innerWidth / 480;
+    let websiteContainer = document.getElementsByClassName("Container")[0];
+    console.log(websiteContainer);
+    console.log(xScaler);
+    // $(websiteContainer).css("transform", scale(window.innerWidth / 480, window.innerWidth / 480));
+    // $(websiteContainer).css("scale", window.innerWidth / 480);
+    // $(websiteContainer).css("transformScaleY", window.innerWidth / 480);
+    // (websiteContainer).style.transform = "scale(2, 2)";
+    // (document.body).style.width = window.innerWidth / 480;
+    // (document.body).style.height = window.innerWidth / 480;
 
+</script>
+
+</html>

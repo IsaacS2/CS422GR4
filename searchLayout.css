@@ -7,10 +7,17 @@
     display: grid;
     padding: 0px;
     outline: 1px solid black;
+    transform-origin: center top;
+    /* transform: scale(2, 2); */
 }
 
 body {
+    /* transform-origin: center;
+    transform: scaleX(4); */
     margin: auto;
+    width: 480px;
+    height: 800px;
+    /* transform: scaleX(480 /); */
 }
 
 .titleBar {
@@ -201,7 +208,8 @@ h3 {
 
 .pest {
     position: relative;
-    padding-bottom: 25px;
+    margin-bottom: 25px;
+    margin-right: 5px;
 }
 
 .listIcon {
@@ -218,11 +226,11 @@ h3 {
 
 /* Main Page location styling */
 .locationDropdown {
-    display: none;    
+    display: none;
     background-color: #f9f9f9;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     z-index: 1;
-    
+
 }
 
 .locationDropdown a {
@@ -240,9 +248,8 @@ h3 {
 #locationSymbol {
     cursor: pointer;
     transition: transform 0.3s ease-in-out
-     
 }
 
 #locationSymbol:hover {
-    transform: scale(0.9); 
+    transform: scale(0.9);
 }

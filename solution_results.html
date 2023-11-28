@@ -19,6 +19,12 @@ Collaborators: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_cus
 
     <!-- Load any supplemental Javascript libraries here -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+    <script src="autoGenerate.js"></script>
+    <script src="breadcrumbs.js"></script>
+    <script>
+        var pageInfo = pageMap.get(sessionStorage.getItem("currentPageInfo"));
+    </script>
 </head>
 
 <body>
@@ -27,14 +33,15 @@ Collaborators: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_cus
         <div class="titleBar">
             <div class="homeIcon">
                 <a href="index.html">
-                <img src="images/home.png" height="115">
+                    <img src="images/home.png" height="115">
                 </a>
             </div>
             <h1>Solution Info</h1>
         </div>
         <div class="cookieLocationBar">
             <div class="cookieColumn">
-                <div>&nbsp;&#12297;&nbsp;<a href="plant-info-index.html">Onion</a>&nbsp;&#12297;&nbsp;<a href="pest_results.html">Aphid</a>&nbsp;&#12297;&nbsp;<b>Neem Oil</b></b></div>
+                <div>&nbsp;&#12297;&nbsp;<a href="plant-info-index.html">Onion</a>&nbsp;&#12297;&nbsp;<a
+                        href="pest_results.html">Aphid</a>&nbsp;&#12297;&nbsp;<b>Neem Oil</b></b></div>
             </div>
             <div class="locationColumn">
                 <label class="locationInfo">Location: <input type="text" id="locationInput"
@@ -92,5 +99,12 @@ Collaborators: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_cus
     </div>
 
 </body>
+<script>
+    // document.getElementsByClassName("solutionTitle")[0].innerHTML = pageInfo.name;
+    // document.getElementsByClassName("solutionImage")[0].lastElementChild.src = pageInfo.image;
+    // document.getElementsByClassName("solutionDescription")[0].children[0].innerHTML = pageInfo.description1;
+    // document.getElementsByClassName("solutionDescription")[0].children[2].innerHTML = pageInfo.description2;
+    // document.getElementsByClassName("solutionDescription")[0].children[4].innerHTML = pageInfo.description3;
+</script>
 
 </html>
